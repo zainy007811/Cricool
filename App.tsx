@@ -14,7 +14,7 @@ interface User {
   email: string;
 }
 
-const VERCEL_DEPLOY_HOOK_URL = "https://api.vercel.com/v1/integrations/deploy/prj_0i9hECoRmys0Qmbp986RR4CWjs1l/PCVFmCMb4n";
+const VERCEL_DEPLOY_HOOK_URL = "https://api.vercel.com/v1/integrations/deploy/prj_VhbCfTr9g6Fq1JqbXG2tH2Ni5tdZ/9ATtqTyRU9";
 
 const triggerVercelDeploy = () => {
   fetch(VERCEL_DEPLOY_HOOK_URL, { method: "POST" })
