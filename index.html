@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CricketStream Live</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              accent: {
+                DEFAULT: '#00ff88',
+                dark: '#00cc6d',
+              },
+            },
+            backgroundImage: {
+              'stadium': "url('https://images.unsplash.com/photo-1595715952994-1f06e0545c47?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'fade-in-up': 'fadeInUp 0.6s ease-in-out',
+              'slide-in-right': 'slideInRight 0.6s ease-in-out',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+              'glow': 'glow 2s ease-in-out infinite',
+              'float': 'float 15s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              fadeInUp: {
+                '0%': { opacity: 0, transform: 'translateY(20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              slideInRight: {
+                '0%': { opacity: 0, transform: 'translateX(20px)' },
+                '100%': { opacity: 1, transform: 'translateX(0)' },
+              },
+              shake: {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+              },
+              glow: {
+                '0%, 100%': { boxShadow: '0 0 5px #00ff88, 0 0 10px #00ff88' },
+                '50%': { boxShadow: '0 0 20px #00ff88, 0 0 30px #00ff88' }
+              },
+              float: {
+                '0%': { transform: 'translateY(0px) translateX(0px) rotate(0deg)' },
+                '100%': { transform: 'translateY(-20px) translateX(30px) rotate(10deg)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.400.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+  </body>
+</html>
